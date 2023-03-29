@@ -45,8 +45,7 @@ if img_file_buffer:
 
         model_pred = model.predict(np.array([face.reshape((48,48,1))]))
         predictions = model_pred.argmax()
-        st.write(type(list(model_pred)))
-        st.write(type(predictions))
+        st.write(list(model_pred)[predictions])
 
         state = labels[predictions]
         font = cv2.FONT_HERSHEY_SIMPLEX
