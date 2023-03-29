@@ -36,7 +36,7 @@ if img_file_buffer:
     detected = face_detection.detectMultiScale(gray, **settings)
 
     for x, y, w, h in detected:
-        det_img = cv2.rectangle(det_img, (x, y), (x+w, y+h), (245, 135, 66), 2)
+        # det_img = cv2.rectangle(det_img, (x, y), (x+w, y+h), (245, 135, 66), 2)
         det_img = cv2.rectangle(det_img, (x, y), (x+w//3, y+20), (245, 135, 66), -1)
         face = gray[y+5:y+h-5, x+20:x+w-20]
         face = cv2.resize(face, (48,48))
