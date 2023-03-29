@@ -45,10 +45,10 @@ if img_file_buffer:
 
         model_pred = model.predict(np.array([face.reshape((48,48,1))]))
         predictions = model_pred.argmax()
-        pred_list = model_pred.tolist()
-        st.write(model_pred[0][predictions])
+        percent = model_pred[0][predictions]
+        percent = np.round(percent, decimals=2)
 
-        state = labels[predictions]
+        state = labels[predictions] + ': '+ str(percent)
         font = cv2.FONT_HERSHEY_SIMPLEX
         cv2.putText(det_img,state,(x+10,y+15), font, 0.5, (0,0,0), 2, cv2.LINE_AA)
 
