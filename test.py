@@ -1,12 +1,11 @@
-import numpy as np
 import cv2
+import os
 import tensorflow as tf
-import streamlit as st
-
 import pandas as pd
 import re
-import os
+import streamlit as st
 import matplotlib.pyplot as plt
+import numpy as np
 from PIL import Image
 
 face_detection = cv2.CascadeClassifier('haar_cascade_face_detection.xml')
@@ -25,8 +24,6 @@ labels = ['Surprise', 'Neutral', 'Anger', 'Happy', 'Sad']
 model = tf.keras.models.load_model('network-5Labels.h5')
 st.title("Face emotion app")
 
-# while True:
-# ret, img = camera.read()
 img_file_buffer = st.file_uploader("ファイルを選択")
 
 # どちらを選択しても後続の処理は同じ
@@ -51,10 +48,4 @@ if img_file_buffer:
         st.markdown("#### あなたの表情は")
         st.markdown("### {}です".format(state))
 
-# cv2.imshow('Facial Expression', img)
 
-# if cv2.waitKey(5) != -1:
-#     break
-
-# camera.release()
-# cv2.destroyAllWindows()
