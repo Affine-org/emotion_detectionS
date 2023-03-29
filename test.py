@@ -11,7 +11,7 @@ from PIL import Image
 st.title("Face emotion app")
 st.write('顔検出：haar_cascade_face_detection')
 st.write('表情分類：network-5Labels')
-st.write('ラベル：'Surprise', 'Neutral', 'Anger', 'Happy', 'Sad'')
+st.write('ラベル：Surprise, Neutral, Anger, Happy, Sad')
 
 face_detection = cv2.CascadeClassifier('haar_cascade_face_detection.xml')
 
