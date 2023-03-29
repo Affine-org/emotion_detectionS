@@ -8,11 +8,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 
+st.title("Face emotion app")
+st.write('顔検出：haar_cascade_face_detection')
+st.write('表情分類：network-5Labels')
+st.write('ラベル：'Surprise', 'Neutral', 'Anger', 'Happy', 'Sad'')
+
 face_detection = cv2.CascadeClassifier('haar_cascade_face_detection.xml')
 
-camera = cv2.VideoCapture(0)
-camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1024)
-camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 768)
 settings = {
 	'scaleFactor': 1.3, 
 	'minNeighbors': 5, 
@@ -22,7 +24,6 @@ settings = {
 labels = ['Surprise', 'Neutral', 'Anger', 'Happy', 'Sad']
 
 model = tf.keras.models.load_model('network-5Labels.h5')
-st.title("Face emotion app")
 
 img_file_buffer = st.file_uploader("ファイルを選択")
 
@@ -37,19 +38,15 @@ if img_file_buffer:
 
     for x, y, w, h in detected:
         det_img = cv2.rectangle(det_img, (x, y), (x+w, y+h), (245, 135, 66), 2)
-        # det_img = cv2.rectangle(det_img, (x, y), (x+w//3, y+20), (245, 135, 66), -1)
         face = gray[y+5:y+h-5, x+20:x+w-20]
         face = cv2.resize(face, (48,48))
         face = face/255.0
 
         predictions = model.predict(np.array([face.reshape((48,48,1))])).argmax()
-        # st.write(predictions)
 
         state = labels[predictions]
         font = cv2.FONT_HERSHEY_SIMPLEX
         cv2.putText(det_img,state,(x+10,y+15), font, 0.5, (0,0,0), 2, cv2.LINE_AA)
-        # st.markdown("#### あなたの表情は")
-        # st.markdown("### {}です".format(state))
 
     st.image(det_img, use_column_width=True)
 
