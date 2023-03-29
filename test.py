@@ -3,6 +3,12 @@ import cv2
 import tensorflow as tf
 import streamlit as st
 
+import pandas as pd
+import re
+import os
+import matplotlib.pyplot as plt
+from PIL import Image
+
 face_detection = cv2.CascadeClassifier('haar_cascade_face_detection.xml')
 
 camera = cv2.VideoCapture(0)
