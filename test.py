@@ -42,10 +42,14 @@ if img_file_buffer:
         face = face/255.0
 
         predictions = model.predict(np.array([face.reshape((48,48,1))])).argmax()
+        st.write(predictions)
+        st.image(face, use_column_width=True)
+
         state = labels[predictions]
         font = cv2.FONT_HERSHEY_SIMPLEX
         cv2.putText(img,state,(x+10,y+15), font, 0.5, (255,255,255), 2, cv2.LINE_AA)
         st.markdown("#### あなたの表情は")
         st.markdown("### {}です".format(state))
+
 
 
