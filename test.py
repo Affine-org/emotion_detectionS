@@ -51,6 +51,6 @@ if img_file_buffer:
         st.markdown("#### あなたの表情は")
         st.markdown("### {}です".format(state))
 
-    st.image(img, use_column_width=True)
+    st.image(det_img, use_column_width=True)
 
 
