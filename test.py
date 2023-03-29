@@ -12,7 +12,7 @@ st.title("Face emotion app")
 st.write('顔検出：haar_cascade_face_detection')
 st.write('表情分類：network-5Labels')
 st.write('ラベル：Surprise, Neutral, Anger, Happy, Sad')
-st.write('参考：https://github.com/rondinellimorais')
+st.write('参考：https://github.com/rondinellimorais/facial-expression-recognition')
 
 face_detection = cv2.CascadeClassifier('haar_cascade_face_detection.xml')
 
