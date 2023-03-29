@@ -30,20 +30,20 @@ img_file_buffer = st.file_uploader("ファイルを選択")
 if img_file_buffer:
     img_file_buffer_2 = Image.open(img_file_buffer)
     img = np.array(img_file_buffer_2)
+    det_img = np.array(img_file_buffer_2)
 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     detected = face_detection.detectMultiScale(gray, **settings)
 
     for x, y, w, h in detected:
-        cv2.rectangle(img, (x, y), (x+w, y+h), (245, 135, 66), 2)
-        cv2.rectangle(img, (x, y), (x+w//3, y+20), (245, 135, 66), -1)
+        det_img = cv2.rectangle(det_img, (x, y), (x+w, y+h), (245, 135, 66), 2)
+        det_img = cv2.rectangle(det_img, (x, y), (x+w//3, y+20), (245, 135, 66), -1)
         face = gray[y+5:y+h-5, x+20:x+w-20]
         face = cv2.resize(face, (48,48))
         face = face/255.0
 
         predictions = model.predict(np.array([face.reshape((48,48,1))])).argmax()
-        st.write(predictions)
-        st.image(face, use_column_width=True)
+        # st.write(predictions)
 
         state = labels[predictions]
         font = cv2.FONT_HERSHEY_SIMPLEX
@@ -51,5 +51,6 @@ if img_file_buffer:
         st.markdown("#### あなたの表情は")
         st.markdown("### {}です".format(state))
 
+    st.image(img, use_column_width=True)
 
 
