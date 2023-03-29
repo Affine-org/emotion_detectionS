@@ -48,8 +48,8 @@ if img_file_buffer:
         state = labels[predictions]
         font = cv2.FONT_HERSHEY_SIMPLEX
         cv2.putText(det_img,state,(x+10,y+15), font, 0.5, (0,0,0), 2, cv2.LINE_AA)
-        st.markdown("#### あなたの表情は")
-        st.markdown("### {}です".format(state))
+        # st.markdown("#### あなたの表情は")
+        # st.markdown("### {}です".format(state))
 
     st.image(det_img, use_column_width=True)
 
