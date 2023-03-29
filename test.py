@@ -43,7 +43,9 @@ if img_file_buffer:
         face = cv2.resize(face, (48,48))
         face = face/255.0
 
-        predictions = model.predict(np.array([face.reshape((48,48,1))])).argmax()
+        model_pred = model.predict(np.array([face.reshape((48,48,1))]))
+        st.write(model_pred)
+        predictions = model_pred.argmax()
 
         state = labels[predictions]
         font = cv2.FONT_HERSHEY_SIMPLEX
