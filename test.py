@@ -45,7 +45,7 @@ if img_file_buffer:
 
         model_pred = model.predict(np.array([face.reshape((48,48,1))]))
         predictions = model_pred.argmax()
-        st.write(type(model_pred))
+        st.write(type(list(model_pred))
         st.write(type(predictions))
 
         state = labels[predictions]
