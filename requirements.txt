@@ -6,3 +6,5 @@ tensorflow-estimator==2.6.0
 keras==2.6.0
 Keras-Preprocessing==1.1.2
 scikit-learn
+matplotlib
+pandas==1.1.5
