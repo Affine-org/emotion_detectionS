@@ -39,7 +39,7 @@ if img_file_buffer:
 
     for x, y, w, h in detected:
         det_img = cv2.rectangle(det_img, (x, y), (x+w, y+h), (0, 0, 0), 2)
-        det_img = cv2.rectangle(det_img, (x, y), (x+w, y + 20), (255, 255, 255), -1)
+        det_img = cv2.rectangle(det_img, (x, y), (x+w, y + 20), (0, 255, 255), -1)
         face = gray[y+5:y+h-5, x+20:x+w-20]
         face = cv2.resize(face, (48,48))
         face = face/255.0
