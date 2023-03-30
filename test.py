@@ -13,8 +13,8 @@ st.markdown("画像から顔検出し、抽出画像を表情で5分類します
 st.write('顔検出モデル：haar_cascade_face_detection')
 st.write('表情分類モデル：network-5Labels')
 st.write('分類ラベル：Surprise, Neutral, Anger, Happy, Sad')
-st.write('参考：https://github.com/rondinellimorais/facial-expression-recognition')
 st.write('未対応：精度&安定性検証、精度向上、描画の視認性向上')
+st.write('参考：https://github.com/rondinellimorais/facial-expression-recognition')
 
 face_detection = cv2.CascadeClassifier('haar_cascade_face_detection.xml')
 
