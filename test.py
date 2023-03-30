@@ -9,7 +9,7 @@ import numpy as np
 from PIL import Image
 
 st.title("表情による感情推定　デモ")
-st.markdown("画像から顔検出し、各画像を表情で5分類します。元画像に分類結果と確信度を追記します。")
+st.markdown("画像から顔検出し、抽出画像を表情で5分類します。元画像に分類結果と確信度を追記します。")
 st.write('顔検出モデル：haar_cascade_face_detection')
 st.write('表情分類モデル：network-5Labels')
 st.write('分類ラベル：Surprise, Neutral, Anger, Happy, Sad')
