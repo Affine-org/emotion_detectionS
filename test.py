@@ -8,7 +8,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 
-st.title("Face emotion app")
+st.title("表情による感情推定　デモ")
+st.markdown("アップロード画像を顔検出し、表情で5分類します。画像に分類結果と確信度を表示します。")
 st.write('顔検出：haar_cascade_face_detection')
 st.write('表情分類：network-5Labels')
 st.write('ラベル：Surprise, Neutral, Anger, Happy, Sad')
