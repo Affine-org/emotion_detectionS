@@ -28,7 +28,7 @@ labels = ['Surprise', 'Neutral', 'Anger', 'Happy', 'Sad']
 
 model = tf.keras.models.load_model('network-5Labels.h5')
 
-img_file_buffer = st.file_uploader("ファイルを選択")
+img_file_buffer = st.file_uploader("ファイルを選択", type=["jpg", "jpeg", "png"])
 
 # どちらを選択しても後続の処理は同じ
 if img_file_buffer:
