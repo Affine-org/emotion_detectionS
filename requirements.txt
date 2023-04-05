@@ -8,4 +8,4 @@ Keras-Preprocessing==1.1.2
 scikit-learn
 matplotlib
 pandas==1.1.5
-typing-extensions==4.3.0
+typing-extensions==3.7.4
