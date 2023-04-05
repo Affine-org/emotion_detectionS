@@ -1,11 +1,11 @@
 streamlit==1.4.0
 numpy==1.19.2
 opencv-python-headless==4.4.0.40
-tensorflow==2.6.0
-tensorflow-estimator==2.6.0
-keras==2.6.0
+tensorflow==2.8.0
+tensorflow-estimator==2.8.0
+keras==2.8.0
 Keras-Preprocessing==1.1.2
 scikit-learn
 matplotlib
 pandas==1.1.5
-typing-extensions==3.7.4
+typing-extensions==4.3.0
