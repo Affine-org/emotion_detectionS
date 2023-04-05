@@ -1,5 +1,5 @@
 streamlit==1.4.0
-numpy==1.19.2
+numpy==1.20.0
 opencv-python-headless==4.4.0.40
 tensorflow==2.8.0
 tensorflow-estimator==2.8.0
